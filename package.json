@@ -1,0 +1,41 @@
+{
+  "name": "todolist",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "react": "^16.12.0",
+    "react-calendar": "^2.19.2",
+    "react-datetime-picker": "^2.9.0",
+    "react-dom": "^16.12.0",
+    "react-moment": "^0.9.7",
+    "react-scripts": "3.4.0",
+    "save": "^2.4.0",
+    "uuid": "^3.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
