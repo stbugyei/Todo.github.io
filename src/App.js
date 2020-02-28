@@ -4,7 +4,7 @@ import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
 import About from "./components/pages/About";
-import TimeInterval from "./components/TimeInterval";
+//import TimeInterval from "./components/TimeInterval";
 import "./App.css";
 
 import uuid from "uuid";
