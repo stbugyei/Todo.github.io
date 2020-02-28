@@ -99,7 +99,7 @@ class App extends Component {
             render={props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo} />
-                <Todos
+                <Todos 
                   todos={this.state.todos}
                   checkCompleted={this.checkCompleted}
                   delTodo={this.delTodo}

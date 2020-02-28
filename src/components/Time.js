@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function getTime() {
-    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  const months = ["JANUARY", "FEBUARY", "MARCH","APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
     let currentDate = new Date()
     let formatedDate = currentDate.getDate() + "-" + months[currentDate.getMonth()] + "-" + currentDate.getFullYear()+' '+ currentDate.getHours()+':'+currentDate.getMinutes()+':'+ currentDate.getSeconds();
    // console.log(formatedDate)
