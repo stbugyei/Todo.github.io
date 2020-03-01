@@ -26,7 +26,7 @@ class displayDateTime extends Component {
     render() {
          return(
            <div>
-             <p>{this.state.curTime}</p>
+             {this.state.curTime}
            </div>
          );
        }

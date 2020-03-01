@@ -28,6 +28,24 @@ a {
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(176, 235, 243) 0%,  rgba(154,222,222,1)  45%, rgba(154,222,222,1) 72%);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  
+.banner{
+  width: 100%;
+  margin-left: 0px;
+  justify-content: space-around;
+
+}
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner{
+    width: 100%;
+    margin-left: 0px;
+    justify-content: space-around;
+}
+}
+
 .banner_content {
   width: 30%;
   display: flex;
@@ -50,6 +68,7 @@ a {
   background-position: 17% 18%;
   background-repeat: no-repeat;
   background-size: 100%;
+
 }
 
 .banner_greetings{
@@ -64,23 +83,25 @@ a {
   font-size: 40px;
   color: rgb(214, 38, 38);
   font-weight: bold;
+  margin: 10px;
 }
 
 .conditionals{
   text-align: center;
   font-size: 35px;
   color:indigo;
+  margin: 15px;
 }
 
 .img{
+  padding: 25px;
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
- /* margin: 25px;*/
 }
 .conditinal_img{
-  width: 23%;
+  width: 40%;
 }
 
 
@@ -114,15 +135,52 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
 transition: all 50s ease 0s;
 }
 
+
+
 .Todo:hover {
   transform: scale(1.1);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .Todo{
+    margin: 10px 15px 0px 15px; 
+    border-radius: 10px;
+    transition: none;
+  }  
+
+  p{
+    font-size: 20px;
+    padding: 10px;
+    margin: 25px;
+  }
+
+  .Todo:hover {
+  transform: none;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .Todo{
+    margin: 10px 15px 0px 15px; 
+    border-radius: 10px;
+    transition: none;
+  }  
+
+  p{
+    font-size: 20px;
+    padding: 10px;
+    margin: 25px;
+  }
+  .Todo:hover {
+    transform: none;
+  }
+}
 
 .calendar{
 display: flex;
 justify-content: center;
-font-size: 19px;
+font-size: 25px;
 padding: 20px;
 color: indigo;
 
@@ -170,7 +228,23 @@ color: indigo;
     flex-direction: row;
     justify-content: center;
 }
+@media (min-width: 320px) and (max-width: 480px) {
+  .fieldset {
+     width: 100%;
+   margin-left: 0px;
+     margin-bottom: 10px; 
+   }    
+}
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .fieldset {
+    width: 100%;
+  margin-left: 0px;
+    margin-bottom: 10px; 
+  } 
+  
+}
 .Search_Submit {
     width: 50%;
     margin: 26px 10px 16px 11px;
@@ -214,8 +288,16 @@ input[type=text], select {
   /* border-top-style: none; */
   /*border-block-end-style: none;
   border-block-start-style: none;*/
-
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  input[type=text], select { 
+   padding: 20px;
+    box-shadow:none;
+  }
+}
+
+
 
 input[type=text]:focus,
 select:focus {
