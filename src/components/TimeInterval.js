@@ -15,19 +15,14 @@ class displayDateTime extends Component {
          () => this.getTime(), 1000) 
   }
 
-
   getTime() {
     const months = ["JANUARY", "FEBUARY", "MARCH","APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
       let currentDate = new Date()
-    let formatedDate = currentDate.getDate() + "-" + months[currentDate.getMonth()] + "-" + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes() + ':' + currentDate.getSeconds();
+    let formatedDate = currentDate.getDate() + "-" + months[currentDate.getMonth()] + "-" + currentDate.getFullYear()/* + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes() + ':' + currentDate.getSeconds();*/
     this.setState({ curTime: formatedDate })
     //console.log(this.state.curTime)
 
   }
-
-
- 
-  
     render() {
          return(
            <div>

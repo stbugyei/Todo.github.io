@@ -19,34 +19,70 @@ a {
     color: #ccc;
     text-decoration: none;
 }
-.banner_wrapper{
+.banner{
   width: 100%;
+  margin: 15px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   border-radius:10px;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(176, 235, 243) 0%,  rgba(154,222,222,1)  45%, rgba(154,222,222,1) 72%);
- 
 }
 
-.banner_image{
-  width: 35%;
-  background-image: url(./components/images/todobg.jpg) ; 
-  background-position: 17% 18%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.banner {
-  width: 50%;
+.banner_content {
+  width: 30%;
   display: flex;
   flex-direction: column;
   line-height: 1.5; 
   font-size: 25px;
   text-align: center;
   margin-bottom: 15px;
-  margin-right: -90px;
-
 }
+
+.social_media{
+  display: flex;
+  padding: 10px;
+  
+}
+
+.banner_image{
+  width: 30%;
+  background-image: url(./components/images/todobg.jpg) ; 
+  background-position: 17% 18%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.banner_greetings{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.hour_handle{
+  text-align: center;
+  font-size: 40px;
+  color: rgb(214, 38, 38);
+  font-weight: bold;
+}
+
+.conditionals{
+  text-align: center;
+  font-size: 35px;
+  color:indigo;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+ /* margin: 25px;*/
+}
+.conditinal_img{
+  width: 23%;
+}
+
 
 .banner_text{
   color: indigo;
@@ -299,16 +335,14 @@ select:focus {
 }
 
 .footer_bottom--subimg {
-  width: 30px;
+  width: 40px;
 }
 
 .icon_group {
   position: relative;
-  width: 15%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 0px 25px 0px 217px;
-
+  justify-content: space-around;
 }
 
 .twitter:hover,
