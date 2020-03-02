@@ -385,14 +385,7 @@ select:focus {
     position: absolute;
     display: none;
   }
-  @media (min-width: 320px) and (max-width: 480px) {
-  
-    .checkmark {
-      top: 4px;
-      height: 36px;
-      width: 41px;
-    }
-      }
+ 
   /* Show the checkmark when checked */
   .css-checkbox input:checked ~ .checkmark:after {
     display: block;
@@ -411,6 +404,27 @@ select:focus {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    .checkmark {
+      top: 4px;
+      height: 36px;
+      width: 41px;
+    }
+    .css-checkbox .checkmark:after {
+      left: 19px;
+      top: 4px;
+      width: 5px;
+       height: 21px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    
+      }
 
 ::-webkit-input-placeholder {
     text-align: center;
