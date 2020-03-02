@@ -8,7 +8,7 @@ export class TodoItem extends Component {
       return {
        padding: '7px 9px',
         fontColor: "rgb(2,0,36)",
-        borderRadius: "50px",
+        borderRadius: "30px",
         background:
        "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,215,209,1) 0%, rgba(247,235,247,1) 45%, rgba(154,222,222,1) 72%)"
       };
