@@ -10,6 +10,7 @@ body {
 
 }
 
+
 .container {
   width: 1320px;
   margin: 0 auto;
@@ -151,7 +152,7 @@ transition: all 50s ease 0s;
   p{
     font-size: 20px;
     padding: 10px;
-    margin: 25px;
+    margin: 50px;
   }
 
   .Todo:hover {
@@ -310,7 +311,7 @@ select:focus {
 /* The css-checkbox container */
 .css-checkbox {
     position: relative;
-    padding-left: 35px;
+    padding-left: 80px;
     margin-bottom: 12px;
     border-radius: 4px;
     cursor: pointer;
@@ -320,6 +321,15 @@ select:focus {
     -ms-user-select: none;
     user-select: none;
   }
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    .css-checkbox {
+      font-size: 25px;
+      padding-left: 80px;
+   
+    }
+        
+    }
 
   /* Hide the browser's default checkbox */
   .css-checkbox input {
