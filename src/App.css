@@ -121,8 +121,6 @@ a {
 .App {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-   
 }
 
 .Todo{
@@ -211,7 +209,7 @@ color: indigo;
 .fieldset {
   border: 1px solid #82ccc6; 
   width: 60%;
-  margin-left: 15px auto;
+  margin: 15px auto;
   border: 1px solid rgb(159, 179, 179);
 }
 
