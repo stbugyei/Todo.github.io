@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Afternoon from "./images/afternoon.svg";
-import SunRise from "./images/sunrise.svg";
-import Sunset from "./images/sunset.svg";
-import Goodnight from "./images/moon.svg";
+import Afternoon from "./../images/afternoon.svg";
+import SunRise from "./../images/sunrise.svg";
+import Sunset from "./../images/sunset.svg";
+// import Goodnight from "./images/moon.svg";
+import Goodnight from "./../images/cloudy.svg";
 
 class ConditionaImage extends Component {
 
@@ -20,17 +21,19 @@ class ConditionaImage extends Component {
       return Sunset
     }
     else if (Hour >= 21 || Hour <= 3) {
-      return  Goodnight 
+      return Goodnight
     };
 
   }
 
   render() {
     return (
-      <div> <img className="conditinal_img"
-      src={this.getImages()}
-      alt=" "
-    /></div>
+      <>
+        <img className="conditinal_img"
+          src={this.getImages()}
+          alt=" "
+        />
+      </>
     );
   }
 }

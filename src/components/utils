@@ -1,0 +1,107 @@
+ state = {
+    //=== <create todos array and use uuid library to dynamically generate id====
+    // todos: [
+    //   {
+    //     id: uuid.v4(),
+    //     title: "Have a quite time",
+    //     completed: false
+    //   },
+    //   {
+    //     id: uuid.v4(),
+    //     title: "Take break fast",
+    //     completed: false
+    //   },
+    //   {
+    //     id: uuid.v4(),
+    //     title: "Set off to school",
+    //     completed: false
+    //   }
+    // ]
+    //todos: localStorage.getItem("mytodos", JSON.stringify())
+    todos: window.localStorage.getItem('mytodos') ? JSON.parse(window.localStorage.getItem('mytodos')) : [],
+  };
+
+  componentDidMount() {
+    // localStorage.setItem("mytodos", JSON.stringify(this.state.todos))
+  }
+
+  //=== <create todos array====
+  /* state = {
+    todos: []
+  };
+//======== making an HTTP request using axios api===
+/*componentDidMount(){
+  axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+  .then(res => this.setState({todos: res.data}))
+}*/
+
+  //==========Function to check completed box ========
+  checkCompleted = id => {
+
+    const completedTodo = this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    })
+
+    window.localStorage.setItem("mytodos", JSON.stringify(completedTodo));
+
+
+    this.setState({
+      todos: completedTodo
+      //   this.state.todos.map(todo => {
+      //   if (todo.id === id) {
+      //     todo.completed = !todo.completed;
+      //   }
+      //   return todo;
+      // })
+    });
+  };
+  //==========Function to addTodo Todolist =======
+  addTodo = title => {
+    const newTodo = {
+      id: uuid.v4(),
+      title,
+      completed: false
+    };
+
+    const updatedNewTodo = [...this.state.todos, newTodo]
+    this.setState({
+      todos: updatedNewTodo
+    });
+    // this.setState({ todos: [...this.state.todos, newTodo] });
+    //localStorage.setItem("mytodos", JSON.stringify(this.state.todos));
+    window.localStorage.setItem("mytodos", JSON.stringify(updatedNewTodo));
+
+  };
+
+  //========== Adding addTodo by making HTTP post =======
+
+  /*addTodo = title => {
+     axios.post('https://jsonplaceholder.typicode.com/todos', {
+       title,
+       completed: false
+     })
+     .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
+  };*/
+
+  //==========Function to delete Todolist ========
+
+  delTodo = id => {
+    const filteredId = this.state.todos.filter(todo => todo.id !== id)
+    window.localStorage.setItem("mytodos", JSON.stringify(filteredId));
+    // const newFilteredId = [...this.state.todos.filteredId]
+    this.setState({
+      todos: filteredId
+    });
+    // this.setState({
+    //   todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    // });
+  };
+  /* delTodo = id => {
+  axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  .then(res =>   this.setState({
+    todos: [...this.state.todos.filter(todo => todo.id !== id)]
+  }));
+  };*/

@@ -6,46 +6,36 @@ export class TodoItem extends Component {
   getStyle = () => {
     if (this.props.todo.completed) {
       return {
-       padding: '7px 9px',
         fontColor: "rgb(2,0,36)",
-        borderRadius: "30px",
-        background:
-       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,215,209,1) 0%, rgba(247,235,247,1) 45%, rgba(154,222,222,1) 72%)"
-      };
-    } else {
-      return {
-        textDecoration: "none"
+        backgroundColor: "#e3e9ff",
+        boxShadow: ' 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%)',
       };
     }
   };
   render() {
-    const { id, title } = this.props.todo;
-    return ( 
-      <div style={this.getStyle()}>
-        <p>
+
+    const { id, title, completed } = this.props.todo;
+
+    return (
+      <div className="todo_item" style={this.getStyle()}>
+        <div>
           <label className="css-checkbox">
             <input
               type="checkbox"
+              defaultChecked={completed}
               onChange={this.props.checkCompleted.bind(this, id)}
             ></input>
             <span className="checkmark"></span>
             {title}
           </label>
-          <button className = 'btnStyle'onClick={this.props.delTodo.bind(this, id)} >
-            {" "}
-            x{" "}
-          </button>
-        </p>{" "}
+
+          <span className='btnStyle' onClick={this.props.delTodo.bind(this, id)} > <i className="far fa-times-circle"></i></span>
         </div>
+      </div>
     );
   }
 }
 
-/* <input className='css-checkbox' id='item'
-            type="checkbox"
-            onChange={this.props.checkCompleted.bind(this, id)}
-          />{" "}<label className = 'css-label' htmlFor="item">{title}</label>
-         {" "}*/
 
 //======== creating propTypes==============
 TodoItem.propTypes = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class HourHandle extends Component {
     state = {
-        curTime: ''
+        curTime: null
     }
     componentDidMount() {
         setInterval(
@@ -17,7 +17,7 @@ class HourHandle extends Component {
 
     render() {
         return (
-          <div>{this.state.curTime}</div>                       
+            <div className='hour_handle'>{this.state.curTime}</div>
         )
     }
 }
