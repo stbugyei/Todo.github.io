@@ -20,7 +20,6 @@ export class HomePage extends Component {
     //===== Function to change the link style ========
     makeLinkActive = () => {
         if (this.state.firstName !== "") {
-            console.log(this.state.firstName)
             return {
                 color: 'indigo',
                 cursor: 'pointer',

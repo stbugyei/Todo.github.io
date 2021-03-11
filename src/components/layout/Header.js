@@ -35,36 +35,37 @@ class Header extends Component {
   render() {
 
     return (
+      
+      <div className="banner-wrapper">
+        <div className='banner_text'> <h1>TODOLIST</h1></div>
+        <div className='banner'>
+          <div className="banner_image">
+            <img src={BannerImg} alt="logo" />
+          </div>
 
-      <div className='banner'>
+          <div className='banner_content'>
 
-        <div className="banner_image">
-          <img src={BannerImg} alt="logo" />
-        </div>
-
-        <div className='banner_content'>
-          <div className='banner_text'> <h1>TODOLIST</h1></div>
-
-          <div className='banner_link'>
-            <Link className="header_link" to="/" onClick={() => this.logOut()}>
-              {this.changeLinkName()}
-            </Link>{" "}
+            <div className='banner_link'>
+              <Link className="header_link" to="/" onClick={() => this.logOut()}>
+                {this.changeLinkName()}
+              </Link>{" "}
             |{" "}
-            <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
-              {" "}
+              <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
+                {" "}
               Todos
             </Link>
+            </div>
+            <TimeInterval />
+            <SocialMedia />
           </div>
-          <TimeInterval />
-          <SocialMedia />
-        </div>
 
-        <div className='banner_greetings'>
-          <HourHandle />
-          <ConditionalGreetings firstName={this.props.firstName} />
-          <ConditionaImages />
-        </div>
+          <div className='banner_greetings'>
+            <HourHandle />
+            <ConditionalGreetings firstName={this.props.firstName} />
+            <ConditionaImages />
+          </div>
 
+        </div>
       </div>
     );
   }
