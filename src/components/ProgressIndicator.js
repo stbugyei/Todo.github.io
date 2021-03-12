@@ -51,6 +51,7 @@ export class ProgressIndicator extends Component {
         if (this.state.totalTodos === 0) {
             let m = parseInt(0)
             this.setState({ todosCompleted: m })
+            this.setState({ printTodosCompleted: m})
         }
     }
 
