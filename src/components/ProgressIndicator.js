@@ -47,12 +47,19 @@ export class ProgressIndicator extends Component {
 
     }
 
+    resetTodosCompleted = () => {
+        if (this.state.totalTodos === 0) {
+            let m = parseInt(0)
+            this.setState({ todosCompleted: m })
+        }
+    }
+
     componentDidMount() {
-        setInterval(() => { this.dataProgress(); this.completedTodos() }, 1000)
+        setInterval(() => { this.dataProgress(); this.completedTodos(); this.resetTodosCompleted() }, 1000)
     }
 
     componentWillUnmount() {
-        clearInterval(this.dataProgress(), this.completedTodos())
+        clearInterval(this.dataProgress(), this.completedTodos(), this.resetTodosCompleted())
     }
 
 
