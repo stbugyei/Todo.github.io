@@ -14,8 +14,8 @@ class ConditionalGreetings extends Component {
         : <> <span>Good Morning,</span> <span style={{ color: '#fff', fontWeight: 'bold' }}>{`${this.props.firstName}`}</span></>}
       </>
     else if (Hour >= 12 && Hour <= 16)
-      return <>{this.props.firstName === null || this.props.firstName === "" ? <span>Afternoon, Dear</span>
-        : <> <span>Afternoon,</span> <span style={{ color: '#fff', fontWeight: 'bold' }}>{`${this.props.firstName}`}</span></>}
+      return <>{this.props.firstName === null || this.props.firstName === "" ? <span>Good Afternoon, Dear</span>
+        : <> <span>Good Afternoon,</span> <span style={{ color: '#fff', fontWeight: 'bold' }}>{`${this.props.firstName}`}</span></>}
       </>
     else if (Hour >= 17 && Hour <= 20)
       return <>{this.props.firstName === null || this.props.firstName === "" ? <span>Good Evening, Dear</span>

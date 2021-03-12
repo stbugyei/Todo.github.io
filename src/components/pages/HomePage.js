@@ -7,7 +7,6 @@ export class HomePage extends Component {
         firstName: window.localStorage.getItem('firstName') ? JSON.parse(window.localStorage.getItem('firstName')) : "",
     };
 
-
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     };
@@ -35,9 +34,9 @@ export class HomePage extends Component {
         return (
             <div className="welcome-wrapper">
                 <div style={{ width: '100%' }}>
-                    <div className="logo" style={{ margin: '20px 0' }}>stbugyei</div>
+                    <div className="" style={{ margin: '20px 0' }}> <h4>Welcome,</h4></div>
 
-                    <h4 style={{ margin: '20px 0' }}>Hi, This is Your Todo List App, Please Enter Your FirstName To Continue.<span role="img" aria-label="hugging face">🤗</span></h4>
+                    <h4 style={{ margin: '20px 0' }}>This is Your Todo List App, Please Enter Your First Name To Continue.<span role="img" aria-label="hugging face">🤗</span></h4>
 
                     <input type="text" className="input-field" placeholder="Please Enter First Name..." style={{ margin: '20px 0' }}
                         name="firstName"

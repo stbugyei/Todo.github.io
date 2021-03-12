@@ -25,7 +25,7 @@ export class AddTodo extends Component {
             <input
               type="text"
               id=""
-              placeholder="+ Enter New Todo"
+              placeholder="+ Type New Task Here"
               value={this.state.title}
               onChange={this.onChange}
             />
@@ -33,7 +33,7 @@ export class AddTodo extends Component {
 
           <input
             type="submit"
-            value="Click Here Or Press Enter To Add New Todo"
+            value="Click Here Or Press Enter To Add New Task"
             className="btn_submit"
           />
       </form>

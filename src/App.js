@@ -86,8 +86,7 @@ class App extends Component {
     return (
       <Router>
         <div className="todo_wrapper">
-          <Header firstName={this.state.firstName} />
-          {/* <Route exact path="/" component={HomePage} /> */}
+          <Header firstName={this.state.firstName} todos={this.state.todos}/>
           <Route
             exact
             path="/todos"

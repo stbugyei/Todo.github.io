@@ -6,6 +6,7 @@ import HourHandle from "./../HourHandle";
 import ConditionalGreetings from "../ConditionalGreetings";
 import ConditionaImages from "../ConditionaImage";
 import BannerImg from "./../../images/todobg.jpg"
+import ProgressIndicator from "../ProgressIndicator";
 
 class Header extends Component {
 
@@ -35,8 +36,9 @@ class Header extends Component {
   render() {
 
     return (
-      
+
       <div className="banner-wrapper">
+        <div className="logo">StBugyei☻</div>
         <div className='banner_text'> <h1>TODOLIST</h1></div>
         <div className='banner'>
           <div className="banner_image">
@@ -64,12 +66,12 @@ class Header extends Component {
             <ConditionalGreetings firstName={this.props.firstName} />
             <ConditionaImages />
           </div>
-
         </div>
+
+          <ProgressIndicator todos={this.props.todos} />
       </div>
     );
   }
-
 }
 
 export default Header;
