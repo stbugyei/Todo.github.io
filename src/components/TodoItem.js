@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
@@ -23,13 +24,23 @@ export class TodoItem extends Component {
             <input
               type="checkbox"
               defaultChecked={completed}
-              onChange={this.props.checkCompleted.bind(this, id)}
+              onChange={() => this.props.checkCompleted(id)}
             ></input>
             <span className="checkmark"></span>
             {title}
           </label>
 
-          <span className='btnStyle' onClick={this.props.delTodo.bind(this, id)} > <i className="far fa-times-circle"></i></span>
+          <div style={{
+            width: '70px', display: 'flex', justifyContent: 'space-between', marginRight: '0',
+            marginLeft: 'auto'
+          }}>
+            <Link to={`/todo/edit/${id}`}>
+              <span className='btnStyle' style={{ color: 'indigo' }}> <i className="fas fa-user-edit"></i></span>
+            </Link>
+
+
+            <span className='btnStyle' style={{ color: 'red' }}onClick={() => this.props.delTodo(id)} > <i className="far fa-times-circle"></i></span>
+          </div>
         </div>
       </div>
     );
@@ -45,4 +56,4 @@ TodoItem.propTypes = {
 };
 
 
-export default TodoItem;
+export default withRouter(TodoItem);

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export class AddTodo extends Component {
@@ -7,8 +8,8 @@ export class AddTodo extends Component {
   };
 
   //========= An onSubmit event for submitting the state(title)=========
-  onSubmit = e => {
-    e.preventDefault();
+  onSubmit = (e) => {
+    // e.preventDefault();
     this.props.addTodo(this.state.title);
     this.setState({ [e.target.title]: "" });
   };
@@ -20,22 +21,27 @@ export class AddTodo extends Component {
 
     return (
 
-      <form className="form_content" onSubmit={this.onSubmit}>
-          <div className="Search_Submit">
-            <input
-              type="text"
-              id=""
-              placeholder="+ Type New Task Here"
-              value={this.state.title}
-              onChange={this.onChange}
-            />
-          </div>
+      <form className="form_content" onSubmit={(e) => e.preventDefault()}>
 
+        <h3 style={{ margin: '25px 0px', textAlign: 'left', fontFamily: 'Poppins, sans-serif' }}>Add a new schedule</h3>
+
+        <div className="Search_Submit">
           <input
-            type="submit"
-            value="Click Here Or Press Enter To Add New Task"
-            className="btn_submit"
+            type="text"
+            id=""
+            placeholder="+ Type new schedule here"
+            value={this.state.title}
+            onChange={this.onChange}
           />
+        </div>
+
+        <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto', marginBottom: '15px', marginTop:'5px' }}>
+          <button className="btn-add btn-add__annex" onClick={(e) => this.onSubmit(e)}><i className="fas fa-plus"></i></button>
+        </Link>
+
+        <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto' }}>
+          <button className="btn-close btn-close__annex" ><i className="fas fa-times"></i></button>
+        </Link>
       </form>
     );
   }

@@ -4,17 +4,18 @@ import { withRouter } from "react-router-dom";
 export class HomePage extends Component {
 
     state = {
-        firstName: window.localStorage.getItem('firstName') ? JSON.parse(window.localStorage.getItem('firstName')) : "",
+        firstName: ""
     };
 
-    onChange = e => {
-        this.setState({ [e.target.name]: e.target.value })
+    //========= An onSubmit event for submitting the state(title)=========
+    onSubmit = (e) => {
+        this.props.addName(this.state.firstName);
+        this.setState({ [e.target.firstName]: "" });
     };
 
-    addName = (somename) => {
-        window.localStorage.setItem("firstName", JSON.stringify(somename));
-        this.props.history.push("/todos")
-    };
+    //========= An onChange event for populating the state(title)=========
+    onChange = e => this.setState({ /*[e.target.title]*/ firstName: e.target.value });
+
 
     //===== Function to change the link style ========
     makeLinkActive = () => {
@@ -44,7 +45,7 @@ export class HomePage extends Component {
                         onChange={this.onChange}
                     />
 
-                    <button className="btn_login" onClick={() => this.addName(firstName)} style={this.makeLinkActive()} ><span><i className="fas fa-sign-in-alt"></i> Sign In </span></button>
+                    <button className="btn_login" onClick={(e) => { this.onSubmit(e); this.props.history.push("/todos")}} style={this.makeLinkActive()} ><span><i className="fas fa-sign-in-alt"></i> Sign In </span></button>
                 </div>
 
             </div>

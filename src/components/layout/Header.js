@@ -10,9 +10,6 @@ import ProgressIndicator from "../ProgressIndicator";
 
 class Header extends Component {
 
-  //======== Logout Function ======
-  logOut = () => { return window.localStorage.removeItem('firstName') }
-
 
   //===== Function to change the link style ========
   makeTodoActive = () => {
@@ -48,7 +45,7 @@ class Header extends Component {
           <div className='banner_content'>
 
             <div className='banner_link'>
-              <Link className="header_link" to="/" onClick={() => this.logOut()}>
+              <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
                 {this.changeLinkName()}
               </Link>{" "}
             |{" "}

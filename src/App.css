@@ -19,7 +19,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #fff;
+	background-color: whitesmoke;
 }
 
 a {
@@ -30,7 +30,7 @@ a {
 .todo_wrapper {
 	width: 500px;
 	/* padding: 10px; */
-	margin: 5% auto;
+	margin: 3% auto;
 	display: flex;
 	flex-direction: column;
 	animation: fade 1s;
@@ -39,10 +39,6 @@ a {
 .welcome-wrapper {
 	width: 500px;
 	padding: 10px;
-	/* position: absolute;
-	top: 55%;
-	right: 50%;
-	transform: translate(50%, -50%); */
 	animation: fade 1s;
 }
 
@@ -51,13 +47,13 @@ a {
 	text-transform: uppercase;
 	color: #fff;
 	font-weight: 600;
-	 margin: 10px 15px; 
+	margin: 10px 15px;
 	display: flex;
 	justify-content: space-between;
 	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 }
 
-.banner-wrapper{
+.banner-wrapper {
 	position: relative;
 	width: 100%;
 	background: linear-gradient(
@@ -68,7 +64,6 @@ a {
 		rgba(154, 222, 222, 1) 72%
 	);
 }
-
 
 .banner {
 	position: relative;
@@ -154,8 +149,8 @@ a {
 	top: 46px;
 	left: 0;
 	width: 100%;
-	height: 2px;
-	background: linear-gradient(to left, #F2709C, #FF9472);
+	height: 1px;
+	background: linear-gradient(to left, #f2709c, #ff9472);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
 }
 
@@ -174,16 +169,17 @@ a {
 }
 
 .todo_item {
-	width: 100%;
+	/* width: 100%; */
+	position: relative;
 	padding: 5px;
-	/* margin: 0px 0px 5px; */
+	margin: 0px 5px 10px;
 	word-break: break-all;
-	/* border-bottom: 2px solid indigo; */
-	/* border-radius: 4px; */
-	/* box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23); */
-	/* text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%); */
+	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 0 8px 8px -11px #312;
+	background-color: #fff;
+	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 	animation: fade 1s;
 	transition: all .2s ease 0s;
 }
@@ -196,13 +192,9 @@ a {
 	color: indigo;
 }
 
-.btnStyle {
-	margin-right: 0;
-	margin-left: auto;
-}
 
-.btnStyle i {
-	color: #ff0000;
+
+.btnStyle i{
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -214,16 +206,17 @@ a {
 }
 
 .form_content {
+	position: relative;
 	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #ccc;
+	/* padding: 10px; */
+	/* margin-bottom: 10px; */
+	/* border: 1px solid #ccc; */
 	/* border-radius: 15px; */
 	font-size: 1rem;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(255, 255, 255);
+	/* background-color: rgb(255, 255, 255); */
 	/* box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23); */
 	animation: fade 1s;
 }
@@ -274,6 +267,31 @@ a {
 	color: indigo;
 	border-radius: 10px;
 	transition: .3s;
+}
+
+.btn-add,
+.btn-close {
+	width: 40px;
+	height: 40px;
+	font-family: inherit;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 50%;
+	/* top: 82%; */
+	/* left: 62%; */
+	/* top: 35em;
+	left: 60em; */
+	background-color: rgba(107, 215, 209, 1);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+	text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
+}
+
+.btn-close {
+	top: 73%;
+	background-color: red;
 }
 
 input[type=text],
@@ -391,15 +409,15 @@ select:focus {
 .icon_group {
 	width: 100%;
 	padding: 10px 0;
-	margin-top: 10px;
+	margin-top: 23px;
 	display: flex;
 	justify-content: space-between;
 }
 
 .media-icon {
 	position: relative;
-	width: 27px;
-	height: 27px;
+	width: 30px;
+	height: 30px;
 	border-radius: 25px;
 	transition: .3s;
 }
@@ -447,7 +465,7 @@ select:focus {
 	width: 0;
 	opacity: 0;
 	transition: .7s;
-	background: linear-gradient(to left, #F2709C, #FF9472);
+	background: linear-gradient(to left, #f2709c, #ff9472);
 	/* box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C; */
 	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
@@ -475,9 +493,8 @@ select:focus {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-	
 	.welcome-wrapper {
-		 width: 100%;
+		width: 100%;
 	}
 
 	.todo_wrapper {
@@ -496,6 +513,27 @@ select:focus {
 
 	.conditinal_img {
 		width: 100px;
+	}
+
+	.form_content {
+		padding: 10px;
+	}
+
+	.btn-add,
+	.btn-close {
+		position: fixed;
+		top: 85%;
+		left: 87%;
+		z-index: 99;
+	}
+
+	.btn-close {
+		top: 75%;
+	}
+
+	.btn-add__annex,
+	.close-add__annex {
+		top: 67%;
 	}
 }
 
