@@ -44,11 +44,9 @@ class App extends Component {
       completed: false
     };
 
-    if (this.state.todos.todo !== 'undefined') {
       const updatedNewTodo = Object.assign(this.state.todos, { todo: [...this.state.todos.todo, newTodo] })
       this.setState(updatedNewTodo)
       window.localStorage.setItem("mytodos", JSON.stringify(updatedNewTodo));
-    }
   };
 
   //==========Function to edit Todo =======
