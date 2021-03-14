@@ -31,7 +31,7 @@ export class TodoItem extends Component {
           </label>
 
           <div style={{
-            width: '70px', display: 'flex', justifyContent: 'space-between', marginRight: '0',
+            width: '85px', display: 'flex', justifyContent: 'space-between', marginRight: '0',
             marginLeft: 'auto'
           }}>
             <Link to={`/todo/edit/${id}`}>
@@ -39,7 +39,7 @@ export class TodoItem extends Component {
             </Link>
 
 
-            <span className='btnStyle' style={{ color: 'red' }}onClick={() => this.props.delTodo(id)} > <i className="far fa-times-circle"></i></span>
+            <span className='btnStyle' style={{ color: 'red' }} onClick={() => this.props.delTodo(id)} > <i className="far fa-times-circle"></i></span>
           </div>
         </div>
       </div>

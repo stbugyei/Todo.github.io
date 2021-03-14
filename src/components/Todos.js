@@ -45,7 +45,9 @@ const Todos = (props) => {
       <div style={{ padding: '10px', marginBottom: '10px', borderBottom: '1px solid #ccc', color: 'indigo', textShadow: '0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%)', fontFamily: 'Poppins, sans-serif', display: 'flex', justifyContent: 'space-between' }}>
         <h3 style={{ paddingTop: '7px' }}>My Current Schedule</h3>
 
-        <button className="btn-add" onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
+        <button className="btn-add btn-add__mobile1" onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
+
+        <button className="btn-add__mobile" onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
       </div>
 
       {myNewTodos}

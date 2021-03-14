@@ -35,18 +35,23 @@ export class AddTodo extends Component {
           />
         </div>
 
-        <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto', marginBottom: '15px', marginTop:'5px' }}>
-          <button className="btn-add btn-add__annex" onClick={(e) => this.onSubmit(e)}><i className="fas fa-plus"></i></button>
-        </Link>
+        <div style={{ display:'flex', flexDirection:'column', justifyContent:'rigth'}}>
+          <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto', marginBottom: '15px', marginTop: '5px' }}>
+            <button className="btn-add btn-add__annex" onClick={(e) => this.onSubmit(e)}><i className="fas fa-plus"></i></button>
+          </Link>
 
-        <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto' }}>
-          <button className="btn-close btn-close__annex" ><i className="fas fa-times"></i></button>
-        </Link>
+          <Link to="/todos" style={{ marginRight: "0px", marginLeft: 'auto' }}>
+            <button className="btn-close btn-close__annex" ><i className="fas fa-times"></i></button>
+          </Link>
+        </div>
+
+
       </form>
     );
   }
 }
-
+// style={{ marginRight: "0px", marginLeft: 'auto', marginBottom: '15px', marginTop: '5px' }}
+// style={{ marginRight: "0px", marginLeft: 'auto' }}
 //=========== creating propTypes ===========
 AddTodo.propTypes = {
   Addtodo: PropTypes.func

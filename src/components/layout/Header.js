@@ -6,6 +6,7 @@ import HourHandle from "./../HourHandle";
 import ConditionalGreetings from "../ConditionalGreetings";
 import ConditionaImages from "../ConditionaImage";
 import BannerImg from "./../../images/todobg.jpg"
+import Speaker from "./../../images/speaker2.gif"
 import ProgressIndicator from "../ProgressIndicator";
 
 class Header extends Component {
@@ -35,15 +36,21 @@ class Header extends Component {
     return (
 
       <div className="banner-wrapper">
-        <div className="logo">StBugyei☻</div>
+        <div className="logo">
+          <span>StBugyei☻</span>
+          <a href="https://radiobruce.netlify.app/" target="_blank" rel="noopener noreferrer"> <span style={{ textTransform: 'initial', marginRight: '24px', position: 'relative', color:'#fff' }}>Live Radio</span>
+            <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} /></a>
+
+        </div>
+
         <div className='banner_text'> <h1>TODOLIST</h1></div>
+
         <div className='banner'>
           <div className="banner_image">
             <img src={BannerImg} alt="logo" />
           </div>
 
           <div className='banner_content'>
-
             <div className='banner_link'>
               <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
                 {this.changeLinkName()}
@@ -65,7 +72,7 @@ class Header extends Component {
           </div>
         </div>
 
-          <ProgressIndicator todos={this.props.todos} />
+        <ProgressIndicator todos={this.props.todos} />
       </div>
     );
   }
