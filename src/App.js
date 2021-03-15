@@ -7,6 +7,7 @@ import HomePage from "./components/pages/HomePage";
 import uuid from "uuid";
 import "./App.css";
 import { EditTodo } from "./components/EditTodo";
+import CompletedTodos from "./components/CompletedTodos";
 
 
 class App extends Component {
@@ -105,6 +106,10 @@ class App extends Component {
                   checkCompleted={this.checkCompleted}
                   delTodo={this.delTodo}
                 />
+              </Route>
+
+              <Route exact path="/todos/completed">
+                <CompletedTodos todo={this.state.todos.todo}/>
               </Route>
 
               <Route exact path="/todo/edit/:id" render={(props) => <EditTodo id={props.match.params.id} todo={this.state.todos.todo} editTodo={this.editTodo} {...props} />} />

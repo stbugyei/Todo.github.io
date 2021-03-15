@@ -38,12 +38,11 @@ class Header extends Component {
       <div className="banner-wrapper">
         <div className="logo">
           <span>StBugyei☻</span>
-          <a href="https://radiobruce.netlify.app/" target="_blank" rel="noopener noreferrer"> <span style={{ textTransform: 'initial', marginRight: '24px', position: 'relative', color:'#fff' }}>Live Radio</span>
+          <a href="https://radiobruce.netlify.app/" target="_blank" rel="noopener noreferrer"> <span style={{ textTransform: 'initial', marginRight: '24px', position: 'relative', color: '#fff' }}>Live Radio</span>
             <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} /></a>
-
         </div>
 
-        <div className='banner_text'> <h1>TODOLIST</h1></div>
+        <div className='banner_text'> <h1>TODO-LIST</h1></div>
 
         <div className='banner'>
           <div className="banner_image">
@@ -51,24 +50,34 @@ class Header extends Component {
           </div>
 
           <div className='banner_content'>
-            <div className='banner_link'>
-              <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
-                {this.changeLinkName()}
-              </Link>{" "}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+              <div className='banner_link'>
+                <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
+                  {this.changeLinkName()}
+                </Link>{" "}
             |{" "}
-              <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
-                {" "}
+                <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
+                  {" "}
               Todos
             </Link>
-            </div>
-            <TimeInterval />
-            <SocialMedia />
-          </div>
+              </div>
 
-          <div className='banner_greetings'>
-            <HourHandle />
-            <ConditionalGreetings firstName={this.props.firstName} />
-            <ConditionaImages />
+              <ConditionaImages />
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <TimeInterval />
+                <HourHandle />
+              </div>
+
+              <ConditionalGreetings firstName={this.props.firstName} />
+            </div>
+
+            <div>
+              <SocialMedia />
+            </div>
+
           </div>
         </div>
 

@@ -9,7 +9,6 @@ export class AddTodo extends Component {
 
   //========= An onSubmit event for submitting the state(title)=========
   onSubmit = (e) => {
-    // e.preventDefault();
     this.props.addTodo(this.state.title);
     this.setState({ [e.target.title]: "" });
   };
@@ -29,7 +28,7 @@ export class AddTodo extends Component {
           <input
             type="text"
             id=""
-            placeholder="+ Type new schedule here"
+            placeholder="Type new schedule here +"
             value={this.state.title}
             onChange={this.onChange}
           />
@@ -50,8 +49,7 @@ export class AddTodo extends Component {
     );
   }
 }
-// style={{ marginRight: "0px", marginLeft: 'auto', marginBottom: '15px', marginTop: '5px' }}
-// style={{ marginRight: "0px", marginLeft: 'auto' }}
+
 //=========== creating propTypes ===========
 AddTodo.propTypes = {
   Addtodo: PropTypes.func

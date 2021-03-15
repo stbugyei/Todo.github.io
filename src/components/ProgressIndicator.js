@@ -68,7 +68,7 @@ export class ProgressIndicator extends Component {
 
         return (
             <div className="progress">
-                <span style={{ position: 'absolute', right: '0', top: '0', padding: '4px', color: 'indigo', textShadow: '0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%)' }}>{this.state.printTodosCompleted} of {this.state.totalTodos} completed</span>
+                <span style={{ position: 'absolute', right: '0', top: '0', padding: '3px', color: 'indigo', textShadow: '0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%)' }}>{this.state.printTodosCompleted} of {this.state.totalTodos} completed</span>
                 <div className="progress-done" style={this.getStyle()}>{this.state.todosCompleted}%</div>
             </div>
         )

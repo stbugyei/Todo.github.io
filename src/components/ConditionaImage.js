@@ -28,12 +28,12 @@ class ConditionaImage extends Component {
 
   render() {
     return (
-      <>
+      <div style={{ position:'relative', width:'44px', minHeight:'44px' }}>
         <img className="conditinal_img"
           src={this.getImages()}
           alt=" "
         />
-      </>
+      </div>
     );
   }
 }
