@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
+
   //===== A function to dynamically style completed todos ===
   getStyle = () => {
     if (this.props.todo.completed) {
@@ -13,9 +14,10 @@ export class TodoItem extends Component {
       };
     }
   };
+
   render() {
 
-    const { id, title, completed } = this.props.todo;
+    const { id, title, date, completed } = this.props.todo;
 
     return (
       <div className="todo_item" style={this.getStyle()}>
@@ -27,8 +29,11 @@ export class TodoItem extends Component {
               onChange={() => this.props.checkCompleted(id)}
             ></input>
             <span className="checkmark"></span>
-            {title}
+
+            <span style={{ paddingBottom: '3px', color: 'indigo', fontStyle: 'italic' }}><i className="far fa-calendar-alt"></i> {date}</span>
+
           </label>
+          <span style={{ display: 'block', paddingLeft: '25px' }}> {title}</span>
 
           <div style={{
             width: '85px', display: 'flex', justifyContent: 'space-between', marginRight: '0',

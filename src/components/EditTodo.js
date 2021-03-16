@@ -32,22 +32,30 @@ export class EditTodo extends Component {
 
     render() {
 
-        const { title } = this.state.todos
+        const { title, date } = this.state.todos
 
         return (
 
             <form className="form_content" onSubmit={(e) => e.preventDefault()}>
 
-                <h3 style={{ margin: '25px 0px', textAlign: 'left', fontFamily: 'Poppins, sans-serif' }}>Edit schedule</h3>
+                <h3 style={{ margin: '12px 0px 12px', textAlign: 'left', fontFamily: 'Poppins, sans-serif' }}>Edit schedule</h3>
 
                 <div className="Search_Submit">
-                    <input
+                    {/* <input
                         type="text"
                         name='title'
-                        placeholder="+ Edit schedule here"
+                        placeholder="Edit schedule here"
                         value={title || ''}
                         onChange={this.onChange}
+                    /> */}
+                    <input style={{marginBottom:'15px'}}
+                        type="datetime-local"
+                        name="date"
+                        value={date || ''}
+                        onChange={this.onChange}
                     />
+
+                    <textarea name='title' className="textarea" placeholder="Edit schedule here" cols="50" rows="4" height='100px' onChange={this.onChange} value={title || ''}></textarea>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'rigth' }}>

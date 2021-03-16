@@ -38,9 +38,10 @@ class App extends Component {
 
 
   //==========Function to addTodo Todolist =======
-  addTodo = title => {
+  addTodo = (title, date) => {
     const newTodo = {
       id: uuid.v4(),
+      date,
       title,
       completed: false
     };

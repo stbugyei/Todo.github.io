@@ -185,8 +185,11 @@ a {
 	display: flex;
 	flex-direction: column;
 	box-shadow: 0 8px 8px -11px #312;
+	/*box-shadow: 0 1px 3px 1px rgb(0 0 0 / 30%);*/
 	background-color: #fff;
 	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
 	animation: fade 1s;
 	transition: all .2s ease 0s;
 }
@@ -221,12 +224,18 @@ a {
 	animation: fade 1s;
 }
 
-.Search_Submit {
+.Search_Submit,
+.text-area__wrapper {
 	width: 100%;
 	margin-bottom: 10px;
 	font-size: 1.0rem;
 	border-radius: 4px;
 	transition: .3s;
+}
+
+.text-area__wrapper {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
 }
 
 .btn_submit,
@@ -267,7 +276,6 @@ a {
 	transition: .3s;
 }
 
-
 .btn-add,
 .btn-add1,
 .btn-close,
@@ -302,7 +310,6 @@ a {
 	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 }
 
-
 .btn-completed {
 	width: 200px;
 	height: initial;
@@ -323,6 +330,8 @@ a {
 }
 
 input[type=text],
+[type=date],
+textarea,
 select {
 	border: 1px solid #82ccc6;
 	width: 100%;
@@ -337,8 +346,13 @@ select {
   border-block-start-style: none;*/
 }
 
+[type=date] {
+	padding: 5px
+}
+
 input[type=text]:focus,
-select:focus {
+select:focus,
+textarea:focus {
 	border: 1px solid #b6ab71fd !important;
 	display: inline-block;
 	background: rgb(255, 254, 254);
@@ -524,7 +538,6 @@ select:focus {
 	}
 }
 
-
 @media (min-width: 320px) and (max-width: 480px) {
 	.welcome-wrapper {
 		width: 100%;
@@ -544,13 +557,13 @@ select:focus {
 		display: none;
 	}
 
-	.banner_greetings {
-		/* width: 160px; */
-	}
+	/* .banner_greetings {
+		width: 160px;
+	} */
 
-	.conditinal_img {
-		/* width: 100px; */
-	}
+	/* .conditinal_img {
+		width: 100px;
+	} */
 
 	.form_content {
 		padding: 10px;
@@ -574,7 +587,7 @@ select:focus {
 	}
 
 	.schedule {
-		padding:10px 0px;
+		padding: 10px 0px;
 	}
 }
 

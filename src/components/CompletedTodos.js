@@ -43,6 +43,8 @@ const CompletedTodos = (props) => {
             <div className="todo_item" style={{
                 backgroundColor: "#e3e9ff",
             }} key={title.id}>
+
+                <div style={{ paddingBottom: '3px', color: 'indigo', fontStyle: 'italic' }}><i className="far fa-calendar-alt"></i> {title.date}</div>
                 <div> {title.title}</div>
             </div>
         )

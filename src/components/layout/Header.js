@@ -42,7 +42,7 @@ class Header extends Component {
             <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} /></a>
         </div>
 
-        <div className='banner_text'> <h1>TODO-LIST</h1></div>
+        <div className='banner_text'> <h1>MY-ToDo-LIST</h1></div>
 
         <div className='banner'>
           <div className="banner_image">
@@ -65,7 +65,7 @@ class Header extends Component {
               <ConditionaImages />
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <TimeInterval />
                 <HourHandle />
