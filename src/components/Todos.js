@@ -12,11 +12,11 @@ const Todos = (props) => {
 
   if (!(todo && Object.keys(todo).length)) {
     return (
-      <div className="loader" style={{ width: "100%", animation: 'fade 1s' }}>
+      <div className="todo_item" style={{ position: 'relative', margin: '0px' }}>
 
-        <p style={{ textAlign: 'left', padding: '15px', color: 'indigo', fontSize:'18px' }}>Hello <span role="img" aria-label="hugging face">😎</span>, You Don't Have Any Schedule Now.</p>
+        <p style={{ textAlign: 'left', padding: '15px', color: 'indigo', fontSize: '18px' }}>Hello <span role="img" aria-label="hugging face">😎</span>, You Don't Have Any Schedule Now.</p>
 
-        <div style={{margin: ' 0px 15px 15px', }} onClick={() => history.push("/addtodos")}>
+        <div style={{ margin: ' 0px 15px 20px', }} onClick={() => history.push("/addtodos")}>
           <button className="btn-add1" style={{ width: '100%', height: 'initial', borderRadius: 'initial', padding: '8px 0px', margin: '0px', fontSize: '18px' }} > Click Here To Add Schedule  <i className="fas fa-plus"></i></button>
         </div>
 

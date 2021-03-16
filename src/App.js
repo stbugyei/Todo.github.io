@@ -17,7 +17,8 @@ class App extends Component {
       {
         todo: [],
         firstName: "",
-      }
+      },
+    user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : []
   };
 
 
@@ -46,9 +47,9 @@ class App extends Component {
       completed: false
     };
 
-      const updatedNewTodo = Object.assign(this.state.todos, { todo: [...this.state.todos.todo, newTodo] })
-      this.setState(updatedNewTodo)
-      window.localStorage.setItem("mytodos", JSON.stringify(updatedNewTodo));
+    const updatedNewTodo = Object.assign(this.state.todos, { todo: [...this.state.todos.todo, newTodo] })
+    this.setState(updatedNewTodo)
+    window.localStorage.setItem("mytodos", JSON.stringify(updatedNewTodo));
   };
 
   //==========Function to edit Todo =======
@@ -64,11 +65,11 @@ class App extends Component {
   }
 
 
-  //==========Function to add username =======
+  //========== Function to add username to todos FirstName =======
   addName = newUser => {
-    const user = Object.assign(this.state.todos, { firstName: newUser })
-    this.setState({ firstName: user })
-    window.localStorage.setItem("mytodos", JSON.stringify(user));
+    const CurrentUser = Object.assign(this.state.todos, { firstName: newUser })
+    this.setState({ firstName: CurrentUser })
+    window.localStorage.setItem("mytodos", JSON.stringify(CurrentUser));
   }
 
 
@@ -90,14 +91,13 @@ class App extends Component {
 
 
   render() {
-
     return (
       <Router>
         <div className="todo_wrapper">
           <Header firstName={this.state.todos.firstName} todos={this.state.todos.todo} logOut={this.logOut} />
           {(this.state.todos.firstName === null || this.state.todos.firstName === "") ?
             <Route exact path="/">
-              <HomePage firstName={this.state.todos.firstName} addName={this.addName} />
+              <HomePage firstName={this.state.todos.firstName} addName={this.addName} addSignInUser={this.addSignInUser} />
             </Route>
             :
             <>
@@ -110,7 +110,7 @@ class App extends Component {
               </Route>
 
               <Route exact path="/todos/completed">
-                <CompletedTodos todo={this.state.todos.todo}/>
+                <CompletedTodos todo={this.state.todos.todo} />
               </Route>
 
               <Route exact path="/todo/edit/:id" render={(props) => <EditTodo id={props.match.params.id} todo={this.state.todos.todo} editTodo={this.editTodo} {...props} />} />

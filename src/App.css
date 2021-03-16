@@ -180,7 +180,7 @@ a {
 	position: relative;
 	padding: 5px;
 	margin: 0px 5px 10px;
-	word-break: break-all;
+	/* word-break: break-all; */
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
@@ -201,6 +201,14 @@ a {
 .calendar {
 	color: indigo;
 	text-align: left;
+}
+
+.calendar-container {
+	font-family: 'Poppins', sans-serif;
+    font-size: small;
+    position: absolute;
+	left: 0px;
+    bottom: 0px;
 }
 
 .btnStyle i {
@@ -330,8 +338,8 @@ a {
 }
 
 input[type=text],
-[type=date],
-textarea,
+[type=datetime-local],
+.textarea,
 select {
 	border: 1px solid #82ccc6;
 	width: 100%;
@@ -340,19 +348,19 @@ select {
 	resize: vertical;
 	outline: none;
 	box-shadow: 0 8px 8px -11px #312;
-	transition: .3s;
+	transition: .2s;
 	/* border-top-style: none; */
 	/*border-block-end-style: none;
   border-block-start-style: none;*/
 }
 
-[type=date] {
-	padding: 5px
+[type=datetime-local] {
+	width: 92%;
 }
 
 input[type=text]:focus,
 select:focus,
-textarea:focus {
+.textarea:focus {
 	border: 1px solid #b6ab71fd !important;
 	display: inline-block;
 	background: rgb(255, 254, 254);

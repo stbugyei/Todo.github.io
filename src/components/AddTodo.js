@@ -37,15 +37,19 @@ export class AddTodo extends Component {
             value={this.state.title}
             onChange={this.onChange}
           /> */}
+          <div style={{ display: 'flex', justifyContent: 'space-beteween', width: '100%' }}>
+            <span style={{ marginRight: '10px', color: 'indigo', paddingTop:'10px' }}>Date:</span>
+            <input style={{ marginBottom: '15px' }}
+              type="datetime-local"
+              name="date"
+              value={this.state.date}
+              onChange={this.onChange}
+            />
+          </div>
 
-          <input style={{marginBottom:'15px'}}
-            type="datetime-local"
-            name="date"
-            value={this.state.date}
-            onChange={this.onChange}
-          />
 
-          <textarea name="title" className="textarea" placeholder="Type new schedule here +" cols="50" rows="4" height='100px' onChange={this.onChange} value={this.state.title}></textarea>
+          <textarea name="title" className="textarea" placeholder="Type new schedule here +" cols="50" rows="6" onChange={this.onChange} value={this.state.title}>
+          </textarea>
 
         </div>
 

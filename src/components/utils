@@ -121,3 +121,28 @@
               </React.Fragment>
             )}
           />
+
+
+  allStorageKeys = Object.keys(localStorage);
+  myFilter = this.allStorageKeys.indexOf(this.state.todos.firstName);
+  storageKey = this.allStorageKeys[this.myFilter]
+
+    //========== Function to add users to user array in state =======
+  addSignInUser = newUser => {
+    const authUser = [...this.state.user, newUser]
+    let newUserCheck = this.state.user.includes(newUser)
+    if (!newUserCheck) {
+      this.setState({ user: authUser })
+      window.localStorage.setItem("appUsers", JSON.stringify(authUser));
+    }
+  }
+
+
+  //======== Login Function ======
+  logIn = () => {
+    let signInUser = this.state.todos.firstName
+    let authUser = this.state.user.includes(signInUser)
+    if (authUser) {
+      return authUser
+    }
+  }

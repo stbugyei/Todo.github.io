@@ -42,7 +42,7 @@ class Header extends Component {
             <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} /></a>
         </div>
 
-        <div className='banner_text'> <h1>MY-ToDo-LIST</h1></div>
+        <div className='banner_text'> <h1>MY-TODO-LIST</h1></div>
 
         <div className='banner'>
           <div className="banner_image">
