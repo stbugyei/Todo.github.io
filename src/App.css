@@ -121,14 +121,16 @@ a {
 
 .conditionals {
 	color: indigo;
-	word-break: break-word;
+	/* word-break: break-word; */
 	transition: all .3s;
-	text-align: right;
+	/* text-align: right; */
+	padding: 0px 0px 10px;
+	text-align: left;
 }
 
 .conditinal_img {
 	position: absolute;
-	top: 0px;
+	top: -13px;
 	left: 0px;
 	width: 100%;
 	height: 100%;
@@ -465,13 +467,13 @@ select:focus,
 	padding: 10px 0;
 	/* margin-top: 23px; */
 	display: flex;
-	justify-content: space-evenly;
 }
 
 .media-icon {
 	position: relative;
 	width: 40px;
 	height: 40px;
+	margin-right: 8%;
 	border-radius: 25px;
 	transition: .3s;
 }
@@ -498,14 +500,14 @@ select:focus,
 /*============= progress indicator ==============*/
 
 .progress {
-	background-color: rgb(212, 176, 238);
 	border-radius: 4px;
 	position: relative;
+	border: 2px solid #fff;
 	margin: 0 15px 15px;
 	height: 30px;
 	/* width: 470px;  */
-	background-color: #e3e9ff;
-	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+	/* background-color: #e3e9ff; */
+	/* box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%); */
 	transition: all .3s;
 }
 

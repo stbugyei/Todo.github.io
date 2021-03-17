@@ -62,22 +62,21 @@ class Header extends Component {
             </Link>
               </div>
 
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '70%' }}>
+                <TimeInterval />
+                <div>
+                  <HourHandle />
+                </div>
+              </div>
+
               <ConditionaImages />
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <TimeInterval />
-                <HourHandle />
-              </div>
-
-              <ConditionalGreetings firstName={this.props.firstName} />
-            </div>
-
-            <div>
-              <SocialMedia />
-            </div>
-
+            <ConditionalGreetings firstName={this.props.firstName} />
+            <SocialMedia />
           </div>
         </div>
 
