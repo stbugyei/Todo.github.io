@@ -1,1 +1,1 @@
-[DEMO] https://stbugyeitodos.netlify.app/
+DEMO [https://stbugyeitodos.netlify.app/]
