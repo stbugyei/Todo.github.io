@@ -46,33 +46,44 @@ class Header extends Component {
 
         <div className='banner'>
           <div className="banner_image">
-            <img src={BannerImg} alt="logo" />
+            {this.props.avarta ?
+              <img src={this.props.avarta} alt="logo" /> :
+              <img src={BannerImg} alt="logo" style={{ borderRadius: 'initial' }} />
+            }
           </div>
 
           <div className='banner_content'>
+
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-              <div className='banner_link'>
-                <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
-                  {this.changeLinkName()}
-                </Link>{" "}
+              <div style={{ display: 'flex' }}>
+                <span className="avarta">
+                  {this.props.avarta ? <img src={this.props.avarta} alt="" style={{ width: '55px', height: '55px', borderRadius: '50%', marginRight: '10px' }} /> : ''}
+                </span>
+
+                <div className='banner_link'>
+                  <Link className="header_link" to="/" onClick={() => this.props.logOut()}>
+                    {this.changeLinkName()}
+                  </Link>{" "}
             |{" "}
-                <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
-                  {" "}
+                  <Link className="todo_link" to="/todos" style={this.makeTodoActive()}>
+                    {" "}
               Todos
             </Link>
+                </div>
               </div>
 
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '70%' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: "wrap" }}>
                 <TimeInterval />
-                <div>
+                <div style={{ margin: "0px 15px"}}>
                   <HourHandle />
                 </div>
+                <div>
+                  <ConditionaImages />
+                </div>
               </div>
-
-              <ConditionaImages />
             </div>
 
             <ConditionalGreetings firstName={this.props.firstName} />

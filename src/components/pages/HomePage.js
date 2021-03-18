@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 export class HomePage extends Component {
 
     state = {
-        firstName: ""
+        firstName: "",
     };
 
     //========= An onSubmit event for submitting the state(title)=========
@@ -35,9 +35,14 @@ export class HomePage extends Component {
         return (
             <div className="welcome-wrapper">
                 <div style={{ width: '100%' }}>
-                    <div className="" style={{ margin: '20px 0', fontSize: '18px' }}> <p>Welcome <span role="img" aria-label="hugging face">🤗</span>,</p></div>
+                    <div className="" style={{ margin: 'px 0', fontSize: '18px' }}> <p>Welcome <span role="img" aria-label="hugging face">🤗</span>,</p></div>
 
-                    <p style={{ margin: '15px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name To Continue.</p>
+                    <p style={{ margin: '10px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name To Continue.</p>
+
+                    <label htmlFor="myfile"><span style={{ paddingRight: '10px' }}>Profile picture:</span>
+                        <input type="file" id="myfile" name="myfile" accept='image/*' onChange={this.props.addAvatar} style={{width: '60%'}}/>
+                    </label>
+
 
                     <input type="text" className="input-field" placeholder="Please Enter First Name..." style={{ margin: '15px 0' }}
                         name="firstName"

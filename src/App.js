@@ -17,6 +17,7 @@ class App extends Component {
       {
         todo: [],
         firstName: "",
+        avarta: "",
       },
     user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : []
   };
@@ -68,8 +69,20 @@ class App extends Component {
   //========== Function to add username to todos FirstName =======
   addName = newUser => {
     const CurrentUser = Object.assign(this.state.todos, { firstName: newUser })
-    this.setState({ firstName: CurrentUser })
+    this.setState({ CurrentUser })
     window.localStorage.setItem("mytodos", JSON.stringify(CurrentUser));
+  }
+
+  //========== Function to add username image to todos avatar =======
+  addAvatar = event => {
+    let file = event.target.files[0];
+    let data = new FileReader();
+    data.readAsDataURL(file);
+    data.onload = () => {
+      const userAvarta = Object.assign(this.state.todos, { avarta: data.result })
+      this.setState({ avarta: userAvarta })
+      window.localStorage.setItem("mytodos", JSON.stringify(userAvarta));
+    }
   }
 
 
@@ -91,13 +104,14 @@ class App extends Component {
 
 
   render() {
+
     return (
       <Router>
         <div className="todo_wrapper">
-          <Header firstName={this.state.todos.firstName} todos={this.state.todos.todo} logOut={this.logOut} />
+          <Header firstName={this.state.todos.firstName} todos={this.state.todos.todo} avarta={this.state.todos.avarta} logOut={this.logOut} />
           {(this.state.todos.firstName === null || this.state.todos.firstName === "") ?
             <Route exact path="/">
-              <HomePage firstName={this.state.todos.firstName} addName={this.addName} addSignInUser={this.addSignInUser} />
+              <HomePage firstName={this.state.todos.firstName} addName={this.addName} addAvatar={this.addAvatar} />
             </Route>
             :
             <>
