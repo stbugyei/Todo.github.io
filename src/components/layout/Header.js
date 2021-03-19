@@ -77,7 +77,7 @@ class Header extends Component {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: "wrap" }}>
                 <TimeInterval />
-                <div style={{ margin: "0px 15px", width:"100px"}}>
+                <div style={{ margin: "0px 15px", width:"110px"}}>
                   <HourHandle />
                 </div>
                 <div>
