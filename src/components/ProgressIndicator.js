@@ -56,11 +56,11 @@ export class ProgressIndicator extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => { this.dataProgress(); this.completedTodos(); this.resetTodosCompleted() }, 1000)
+        this.interval = setInterval(() => { this.dataProgress(); this.completedTodos(); this.resetTodosCompleted() }, 1000)
     }
 
     componentWillUnmount() {
-        clearInterval(this.dataProgress(), this.completedTodos(), this.resetTodosCompleted())
+        clearInterval(this.interval)
     }
 
 

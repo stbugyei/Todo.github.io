@@ -15,13 +15,11 @@ class displayDateTime extends Component {
     //console.log(this.state.curTime)
   }
 
-  componentDidMount() {
-    setInterval(() => this.getTime(), 1000)
-  }
+  interval = 0
 
-  componentWillUnmount(){
-    clearInterval(this.getTime())
-  }
+  componentDidMount() {this.interval = setInterval(() => this.getTime(), 1000)}
+
+  componentWillUnmount() {clearInterval(this.interval)}
 
   render() {
     return (

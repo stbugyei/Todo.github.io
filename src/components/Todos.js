@@ -7,12 +7,12 @@ const Todos = (props) => {
 
   const history = useHistory();
 
-  const { todo, checkCompleted, delTodo } = props
+  const { todo, checkCompleted, delTodo, askNotificationPermission } = props
 
 
   if (!(todo && Object.keys(todo).length)) {
     return (
-      <div className="todo_item" style={{ position: 'relative', margin: '0px', boxShadow:'initial' }}>
+      <div className="todo_item" style={{ position: 'relative', margin: '0px', boxShadow: 'initial' }}>
 
         <p style={{ textAlign: 'left', padding: '15px 15px 25px', color: 'indigo', fontSize: '18px' }}>Hello <span role="img" aria-label="hugging face">😎</span>, You Don't Have Any Schedule Now.</p>
 
@@ -45,11 +45,13 @@ const Todos = (props) => {
       <div style={{ padding: '10px', marginBottom: '10px', borderBottom: '1px solid #ccc', color: 'indigo', textShadow: '0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%)', fontFamily: 'Poppins, sans-serif', display: 'flex', justifyContent: 'space-between' }}>
         <h3 className="schedule">My Current Schedule</h3>
 
-        <button className="btn-add" style={{ fontSize: '24px' }} onClick={() => history.push("/todos/completed")}><i className="fas fa-list"></i></button>
+        {Notification.permission === 'denied' || Notification.permission === 'default' ? <button className="btn-add" style={{ fontSize: '25px' }} onClick={() => askNotificationPermission()}><i className="far fa-bell"></i></button> : ''}
 
-        <button className="btn-add btn-add__mobile1" onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
+        <button className="btn-add" style={{ fontSize: '21px' }} onClick={() => history.push("/todos/completed")}><i className="fas fa-list"></i></button>
 
-        <button className="btn-add__mobile" onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
+        <button className="btn-add btn-add__mobile1" style={{ fontSize: '25px' }} onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
+
+        <button className="btn-add__mobile" style={{ fontSize: '21px' }} onClick={() => history.push("/addtodos")}><i className="fas fa-plus"></i></button>
       </div>
 
       {myNewTodos}

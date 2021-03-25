@@ -17,7 +17,7 @@ export class TodoItem extends Component {
 
   render() {
 
-    const { id, title, date, completed } = this.props.todo;
+    const { id, title, date, time, completed } = this.props.todo;
 
     return (
       <div className="todo_item" style={this.getStyle()}>
@@ -31,6 +31,8 @@ export class TodoItem extends Component {
             <span className="checkmark"></span>
 
             <span style={{ paddingBottom: '3px', color: 'indigo', fontStyle: 'italic' }}><i className="far fa-calendar-alt"></i> {date}</span>
+
+            <span style={{ paddingBottom: '3px', color: 'indigo', fontStyle: 'italic',  marginLeft:'20px'}}><i className="far fa-clock"></i> {time}</span>
 
           </label>
           <span style={{ display: 'block', paddingLeft: '25px' }}> {title}</span>

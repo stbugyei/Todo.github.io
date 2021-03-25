@@ -362,6 +362,21 @@ a {
 	padding: 10px;
 }
 
+
+input[type="time"],
+input[type="date"] {
+	border-radius: 10px;
+	font-family: inherit;
+	outline: none;
+	border: 1px solid #82ccc6;
+	padding: 3px;
+	background-color: #fff;
+	box-shadow: 0 8px 8px -11px #312;
+	transition: .2s;
+}
+
+
+
 input[type=text],
 [type=datetime-local],
 .textarea,

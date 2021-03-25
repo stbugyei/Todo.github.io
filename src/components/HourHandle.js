@@ -4,7 +4,7 @@ class HourHandle extends Component {
     state = {
         curTime: null
     }
-   
+
 
     GetHoursMinuteSeconds() {
         let curHour = new Date();
@@ -12,10 +12,13 @@ class HourHandle extends Component {
         this.setState({ curTime: formatedTime })
     }
 
+    interval = 0
+
     componentDidMount() {
-        setInterval(
-            () => this.GetHoursMinuteSeconds(), 1000)
+        this.interval = setInterval(() => this.GetHoursMinuteSeconds(), 1000)
     }
+
+    componentWillUnmount() {clearInterval(this.interval)}
 
     render() {
         return (

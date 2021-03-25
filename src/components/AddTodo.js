@@ -6,11 +6,12 @@ export class AddTodo extends Component {
   state = {
     title: "",
     date: "",
+    time: "",
   };
 
   //========= An onSubmit event for submitting the state(title)=========
   onSubmit = (e) => {
-    this.props.addTodo(this.state.title, this.state.date);
+    this.props.addTodo(this.state.title, this.state.date, this.state.time);
     this.setState({ [e.target.title]: "", [e.target.date]: "" });
   };
 
@@ -37,16 +38,31 @@ export class AddTodo extends Component {
             value={this.state.title}
             onChange={this.onChange}
           /> */}
-          <div style={{ display: 'flex', justifyContent: 'space-beteween', width: '100%' }}>
-            <span style={{ marginRight: '10px', color: 'indigo', paddingTop:'10px' }}>Date:</span>
-            <input style={{ marginBottom: '15px' }}
-              type="datetime-local"
-              name="date"
-              value={this.state.date}
-              onChange={this.onChange}
-            />
-          </div>
 
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
+            <div style={{ marginRight: 'auto', marginLeft: '0px' }}>
+              <span style={{ marginRight: '10px', color: 'indigo' }}>Date:</span>
+              <input
+                // type="datetime-local"
+                type="date"
+                name="date"
+                value={this.state.date}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div style={{ marginRight: '0px', marginLeft: 'auto' }}>
+              <span style={{ marginRight: '10px', color: 'indigo' }}>Time:</span>
+              <input
+                // type="datetime-local"
+                type="time"
+                name="time"
+                value={this.state.time}
+                onChange={this.onChange}
+              />
+            </div>
+          </div>
 
           <textarea name="title" className="textarea" placeholder="Type new schedule here +" cols="50" rows="6" onChange={this.onChange} value={this.state.title}>
           </textarea>

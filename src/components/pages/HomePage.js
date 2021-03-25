@@ -39,10 +39,9 @@ export class HomePage extends Component {
 
                     <p style={{ margin: '10px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name To Continue.</p>
 
-                    <label htmlFor="myfile"><span style={{ paddingRight: '10px' }}>Profile picture:</span>
-                        <input type="file" id="myfile" name="myfile" accept='image/*' onChange={this.props.addAvatar} style={{width: '60%'}}/>
+                    <label htmlFor="myfile" className="file-upload"><span style={{ paddingRight: '10px' }}>Profile picture:</span>
+                        <input type="file" id="myfile" name="myfile" accept='image/*' onChange={this.props.addAvatar} style={{ width: '60%' }} />
                     </label>
-
 
                     <input type="text" className="input-field" placeholder="Please Enter First Name..." style={{ margin: '15px 0' }}
                         name="firstName"

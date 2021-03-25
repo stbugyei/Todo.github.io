@@ -32,7 +32,7 @@ export class EditTodo extends Component {
 
     render() {
 
-        const { title, date } = this.state.todos
+        const { title, date, time } = this.state.todos
 
         return (
 
@@ -48,7 +48,7 @@ export class EditTodo extends Component {
                         value={title || ''}
                         onChange={this.onChange}
                     /> */}
-                    <div style={{ display: 'flex', justifyContent: 'space-beteween', width: '100%' }}>
+                    {/* <div style={{ display: 'flex', justifyContent: 'space-beteween', width: '100%' }}>
                         <span style={{ marginRight: '10px', color: 'indigo', paddingTop:'10px' }}>Date:</span>
                         <input style={{ marginBottom: '15px' }}
                             type="datetime-local"
@@ -56,6 +56,30 @@ export class EditTodo extends Component {
                             value={date || ''}
                             onChange={this.onChange}
                         />
+                    </div> */}
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
+                        <div style={{ marginRight: 'auto', marginLeft: '0px' }}>
+                            <span style={{ marginRight: '10px', color: 'indigo' }}>Date:</span>
+                            <input
+                                // type="datetime-local"
+                                type="date"
+                                name="date"
+                                value={date || ''}
+                                onChange={this.onChange}
+                            />
+                        </div>
+
+                        <div style={{ marginRight: '0px', marginLeft: 'auto' }}>
+                            <span style={{ marginRight: '10px', color: 'indigo' }}>Time:</span>
+                            <input
+                                // type="datetime-local"
+                                type="time"
+                                name="time"
+                                value={time || ''}
+                                onChange={this.onChange}
+                            />
+                        </div>
                     </div>
 
                     <textarea name='title' className="textarea" placeholder="Edit schedule here" cols="50" rows="6" onChange={this.onChange} value={title || ''}></textarea>
