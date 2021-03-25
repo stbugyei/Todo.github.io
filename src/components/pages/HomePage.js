@@ -37,7 +37,7 @@ export class HomePage extends Component {
                 <div style={{ width: '100%' }}>
                     <div className="" style={{ margin: 'px 0', fontSize: '18px' }}> <p>Welcome <span role="img" aria-label="hugging face">🤗</span>,</p></div>
 
-                    <p style={{ margin: '10px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name To Continue.</p>
+                    <p style={{ margin: '10px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name And Upload image To Continue.</p>
 
                     <label htmlFor="myfile" className="file-upload"><span style={{ paddingRight: '10px' }}>Profile picture:</span>
                         <input type="file" id="myfile" name="myfile" accept='image/*' onChange={this.props.addAvatar} style={{ width: '60%' }} />
