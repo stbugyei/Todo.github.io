@@ -25,7 +25,6 @@ class App extends Component {
     user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : [],
     curTime: null,
     curDate: null,
-    alertFlag: false
   };
 
 
@@ -216,22 +215,6 @@ class App extends Component {
   }
 
 
-  //========== Function to register service-worker  ==========
-  registerServiceWorker = () => {
-    if ('serviceWorker' in navigator && 'PushManager' in window) {
-      console.log('Service Worker and Push is supported');
-
-      navigator.serviceWorker.register('sw.js')
-        .then(function (swReg) {
-          console.log('Service Worker is registered', swReg);
-        })
-        .catch(function (error) {
-          console.error('Service Worker Error', error);
-        });
-    } else { console.warn('Push messaging is not supported'); }
-  }
-
-
   //========== Function to create notification  ==========
   createNotification = () => {
     let allTrue = this.state.todos.todo.some(ticked => ticked.notified === false && ticked.date === this.state.curDate && ticked.time === this.state.curTime)
@@ -286,7 +269,6 @@ class App extends Component {
     this.interval = setInterval(() => this.timeHandle(), 1000);
     this.interval = setInterval(() => this.alertUser(), 1000);
     this.interval = setInterval(() => this.createNotification(), 1000);
-    this.registerServiceWorker();
   }
 
 
@@ -294,7 +276,7 @@ class App extends Component {
     clearInterval(this.interval);
   }
 
-
+  
   render() {
 
     return (
