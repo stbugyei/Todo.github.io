@@ -48,7 +48,7 @@ class Header extends Component {
           <div className="banner_image">
             {this.props.avarta ?
               <img src={this.props.avarta} alt="logo" /> :
-              <img src={BannerImg} alt="logo" style={{ borderRadius: 'initial' }} />
+              <img src={BannerImg} alt="logo" />
             }
           </div>
 
@@ -57,7 +57,7 @@ class Header extends Component {
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
               <div style={{ display: 'flex' }}>
                 <span className="avarta">
-                  {this.props.avarta ? <img src={this.props.avarta} alt="" style={{ width: '55px', height: '55px', borderRadius: '50%', marginRight: '10px' }} /> : ''}
+                  {this.props.avarta ? <img src={this.props.avarta} alt="" style={styleAvatar} /> : <img src={BannerImg} alt="" style={styleAvatar} />}
                 </span>
 
                 <div className='banner_link'>
@@ -77,7 +77,7 @@ class Header extends Component {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: "wrap" }}>
                 <TimeInterval />
-                <div style={{ margin: "0px 15px", width:"110px"}}>
+                <div style={{ margin: "0px 15px", width: "110px" }}>
                   <HourHandle />
                 </div>
                 <div>
@@ -98,3 +98,7 @@ class Header extends Component {
 }
 
 export default Header;
+
+const styleAvatar = {
+  width: '55px', height: '55px', borderRadius: '50%', marginRight: '10px'
+}

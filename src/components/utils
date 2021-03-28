@@ -146,3 +146,79 @@
       return authUser
     }
   }
+
+  export default class ProtectedRoute extends Component {
+
+    user = JSON.parse(window.localStorage.getItem('mytodos')) 
+
+    render() {
+        const { component: Component, ...rest } = this.props
+
+       console.log(this.props)
+        // firstName !== 'undefined' || firstName !== '' ?
+        // (this.state.todos.firstName === null || this.state.todos.firstName === "")
+          // <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+        //this.user.firstName !== 'undefined' && this.user.firstName !== '' ?
+        return (
+            <Route
+                {...rest}
+                render={props => (
+                    this.user.firstName !== 'undefined' && this.user.firstName !== '' ?
+                        <Component {...props} /> :
+                        <Redirect to='/' />
+                )}
+            />
+        )
+    }
+}
+
+const Authenticate = ({ component: Component, ...rest }) => {
+    // <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+    //const history = useHistory();
+    //console.log(history)
+    const user = JSON.parse(window.localStorage.getItem('mytodos'))
+
+    // const checkAuth = () => {
+    //     if (firstName !== null && firstName !== "") {
+    //         return true
+    //     }
+    // }
+    // console.log(firstName)
+    return (
+        <Route
+            {...rest}
+            render={(props) => {
+                if (user.firstName === 'undefined' && user.firstName === '') {
+                    return (<Redirect to={
+                        {
+                            pathname: '/',
+                            state: {
+                                from: props.location
+                            }
+                        }
+                    } />)
+                } else {
+                    return (<Component {...props
+                    } />);
+                }
+            }}
+        />
+    );
+}
+export default Authenticate
+
+
+function showNotification() {
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification('Vibration Sample', {
+          body: 'Buzz! Buzz!',
+          icon: '../images/touch/chrome-touch-icon-192x192.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'vibration-sample'
+        });
+      });
+    }
+  });
+}
