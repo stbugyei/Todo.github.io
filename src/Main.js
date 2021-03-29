@@ -20,7 +20,7 @@ class Main extends Component {
                 firstName: "",
                 avarta: "",
             },
-        user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : [],
+        //user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : [],
         curTime: null,
         curDate: null,
     };
@@ -222,12 +222,14 @@ class Main extends Component {
         let allTrue = this.state.todos.todo.some(ticked => ticked.notified === false && ticked.date === this.state.curDate && ticked.time === this.state.curTime)
         let img = this.state.todos.avarta;
         let text = 'Hello! Your schedule"' + this.trancateText(this.dueTitle()) + '" is due.';
-        let vibration = [200, 100, 200, 100, 200, 100, 200];
+        let vibration = [100, 50, 100];
 
         if (allTrue === true) {
             if (Notification.permission === 'granted') {
-                navigator.serviceWorker.ready.then(function (registration) {
-                    registration.showNotification('TodoList', { body: text, icon: img, vibrate: vibration });
+                // navigator.serviceWorker.ready.then(function (registration) {
+                navigator.serviceWorker.getRegistration().then(function (registration) {
+                    const options = { body: text, icon: img, vibrate: vibration };
+                    registration.showNotification('TodoList', options);
                 });
 
                 /*##################### Condition to set the notified flag to true #######################*/
