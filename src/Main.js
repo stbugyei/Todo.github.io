@@ -236,14 +236,14 @@ class Main extends Component {
 
     //========== Email notification function ==========
     sendEmailWithSendInBlue = () => {
-
+        const API_KEY = `${process.env.REACT_APP_EMAIL_API_KEY}`;
         const url = 'https://api.sendinblue.com/v3/smtp/email';
         const options = {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                'api-key': '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'
+                'api-key': API_KEY
             },
             body: JSON.stringify({
                 sender: { name: 'Todolist', email: 'stbugyei@yahoo.co.uk' },
