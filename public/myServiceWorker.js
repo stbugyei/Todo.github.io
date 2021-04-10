@@ -19,7 +19,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Cache and return the requests
+//Cache and return the requests
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)

@@ -37,9 +37,14 @@ class Header extends Component {
 
       <div className="banner-wrapper">
         <div className="logo">
-          <span>StBugyei☻</span>
+          <span className="logo-item">StBugyei&#128578;</span>
+
+          <a href="https://priscillacart.netlify.app/" target="_blank" rel="noopener noreferrer"> <span style={{ textTransform: 'initial', position: 'relative', color: '#fff' }}>Shopping List  <span style={{ animation: "verticalSlide 1s infinite alternate", color: "indigo", display:'inline-block' }}><i className="fas fa-shopping-cart"></i></span></span>
+          </a>
+
           <a href="https://radiobruce.netlify.app/" target="_blank" rel="noopener noreferrer"> <span style={{ textTransform: 'initial', marginRight: '24px', position: 'relative', color: '#fff' }}>Live Radio</span>
-            <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} /></a>
+            <img src={Speaker} alt="headphone" style={{ transform: 'scale(.4)', position: 'absolute', top: '-20px', right: '-24px' }} />
+          </a>
         </div>
 
         <div className='banner_text'> <h1>MY-TODO-LIST</h1></div>
@@ -54,7 +59,7 @@ class Header extends Component {
 
           <div className='banner_content'>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', marginTop: '10px' }}>
               <div style={{ display: 'flex' }}>
                 <span className="avarta">
                   {this.props.avarta ? <img src={this.props.avarta} alt="" style={styleAvatar} /> : <img src={BannerImg} alt="" style={styleAvatar} />}

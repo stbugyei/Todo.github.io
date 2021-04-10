@@ -53,6 +53,15 @@ a {
 	text-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 }
 
+.logo-item{
+	position: absolute;
+	top: 87px;
+	right: 0;
+	font-size: 13px;
+	color: indigo;
+	text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23); 
+}
+
 .log a {
 	color: indigo;
 }
@@ -185,6 +194,18 @@ a {
 	background: linear-gradient(to left, #f2709c, #ff9472);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23);
 }
+
+/* .banner_text::after {
+	font-family: "Font Awesome 5 Free";
+	content: "STBUGYEI\f118";
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	/* width: 100%; */
+	/* vertical-align: middle;
+	color: indigo;
+	text-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .23); 
+} */ 
 
 .header_link {
 	color: rgb(214, 38, 38);
@@ -377,7 +398,7 @@ input[type="date"] {
 
 
 
-input[type=text],
+input[type=text],input[type=email],
 [type=datetime-local],
 .textarea,
 select {
@@ -478,24 +499,24 @@ select:focus,
 }
 
 ::-webkit-input-placeholder {
-	text-align: center;
+	text-align: left;
 	color: rgb(0, 30, 128);
 	font-size: 16px;
 	font-weight: bold;
 }
 
 :-moz-placeholder {
-	text-align: center;
+	text-align: left;
 	font-size: 16px;
 }
 
 ::-moz-placeholder {
-	text-align: center;
+	text-align: left;
 	font-size: 16px;
 }
 
 :-ms-input-placeholder {
-	text-align: center;
+	text-align: left;
 	font-size: 16px;
 }
 
@@ -586,6 +607,27 @@ select:focus,
 	}
 }
 
+/*============= Animations verticalSlide ==============*/
+
+@-webkit-keyframes verticalSlide {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(4px);
+	}
+}
+
+@keyframes verticalSlide {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(4px);
+	}
+}
+
+
 @media (min-width: 320px) and (max-width: 480px) {
 	.welcome-wrapper {
 		width: 100%;
@@ -616,7 +658,7 @@ select:focus,
 	.avarta::before {
 		position: absolute;
 		content: "";
-		top: 8px;
+		top: 18px;
 		left: 9px;
 		width: 57px;
 		height: 59px;
@@ -657,6 +699,10 @@ select:focus,
 
 	.schedule {
 		padding: 10px 0px;
+	}
+
+	input[type=text], input[type=email] {
+		padding: 8px;
 	}
 }
 

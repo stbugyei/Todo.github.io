@@ -19,8 +19,9 @@ class Main extends Component {
                 todo: [],
                 firstName: "",
                 avarta: "",
+                email: "stbugyei@yahoo.co.uk",
             },
-        //user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : [],
+        user: window.localStorage.getItem('appUsers') ? JSON.parse(window.localStorage.getItem('appUsers')) : [],
         curTime: null,
         curDate: null,
     };
@@ -78,6 +79,13 @@ class Main extends Component {
         window.localStorage.setItem("mytodos", JSON.stringify(CurrentUser));
     }
 
+    //========== Function to add email to todos =======
+    addEmail = userEmail => {
+        const CurrentUserEmail = Object.assign(this.state.todos, { email: userEmail })
+        this.setState({ CurrentUserEmail })
+        window.localStorage.setItem("mytodos", JSON.stringify(CurrentUserEmail));
+    }
+
     //========== Function to add username image to todos avatar =======
     addAvatar = event => {
         let file = event.target.files[0];
@@ -112,7 +120,8 @@ class Main extends Component {
     dateHandle = () => {
         const monthNumber = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
         let dateNow = new Date();
-        let formatedDateNow = dateNow.getFullYear() + "-" + monthNumber[dateNow.getMonth()] + "-" + dateNow.getDate();
+        let presentDay = ('0' + dateNow.getDate()).substr(-2);
+        let formatedDateNow = dateNow.getFullYear() + "-" + monthNumber[dateNow.getMonth()] + "-" + presentDay;
         this.setState({ curDate: formatedDateNow })
     };
 
@@ -216,6 +225,41 @@ class Main extends Component {
         }
     }
 
+    //========== Email notification template ==========
+    emailTemplate =
+        `<div>
+            <p>Hello ${this.state.todos.firstName},</p>
+            <p>You have a due schedule on your Todolist.</p>
+                <p>Kind regards,</p>
+                <p>STBUGYEI &#128578;</p>
+        </div>`
+
+    //========== Email notification function ==========
+    sendEmailWithSendInBlue = () => {
+
+        const url = 'https://api.sendinblue.com/v3/smtp/email';
+        const options = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'api-key': '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'
+            },
+            body: JSON.stringify({
+                sender: { name: 'Todolist', email: 'stbugyei@yahoo.co.uk' },
+                to: [{ email: this.state.todos.email, name: this.state.todos.firstName }],
+                textContent: (this.emailTemplate).replace(/\s+/g, " ").trim(),
+                subject: 'A due schedule'
+            })
+        };
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.error('error:' + err));
+
+    }
+
 
     //========== Function to create notification  ==========
     createNotification = () => {
@@ -231,6 +275,8 @@ class Main extends Component {
                     const options = { body: text, icon: img, vibrate: vibration };
                     registration.showNotification('TodoList', options);
                 });
+
+                this.sendEmailWithSendInBlue();
 
                 /*##################### Condition to set the notified flag to true #######################*/
                 let notifiedID = this.dueDateAndDueTime()[0].id
@@ -267,11 +313,13 @@ class Main extends Component {
 
     redirectToTodos = () => {
         const { history } = this.props;
-        if (this.state.todos.firstName !== null || this.state.todos.firstName !== "") {
+        let myName = this.state.todos.firstName
+        let myEmail = this.state.todos.email
+        if ((myName !== null || myName !== "") || (myEmail !== null || myEmail !== "")) {
             if (history) {
                 history.push("/todos");
             }
-        } if (this.state.todos.firstName === null || this.state.todos.firstName === "") {
+        } if( (myName === null || myName === "") || (myEmail === null || myEmail === "") ) {
             if (history) {
                 history.push("/");
             }
@@ -291,7 +339,6 @@ class Main extends Component {
     componentWillUnmount() {
         clearInterval(this.interval);
     }
-
 
     render() {
 
@@ -320,7 +367,7 @@ class Main extends Component {
                     </Route>
 
                     <Route exact path="/">
-                        <HomePage firstName={this.state.todos.firstName} addName={this.addName} addAvatar={this.addAvatar} />
+                        <HomePage firstName={this.state.todos.firstName} addName={this.addName} addAvatar={this.addAvatar} addEmail={this.addEmail}/>
                     </Route>
 
                 </div>

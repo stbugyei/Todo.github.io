@@ -5,21 +5,34 @@ export class HomePage extends Component {
 
     state = {
         firstName: "",
+        email: "",
     };
 
     //========= An onSubmit event for submitting the state(title)=========
     onSubmit = (e) => {
         this.props.addName(this.state.firstName);
-        this.setState({ [e.target.firstName]: "" });
+        this.props.addEmail(this.state.email);
+        this.setState({ [e.target.firstName]: "", [e.target.email]: "" });
     };
 
-    //========= An onChange event for populating the state(title)=========
+    //=== An onChange event for populating for updating firstname ====
     onChange = e => this.setState({ /*[e.target.title]*/ firstName: e.target.value });
 
+    //=== An onChange event for populating for updating email ====
+    onEmailChange = e => this.setState({ email: e.target.value });
+
+    //=== email validation function ====
+    emailValidator = () => {
+        let validator = false
+        if ((new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(this.state.email))) {
+            validator = true
+        }
+        return validator
+    }
 
     //===== Function to change the link style ========
     makeLinkActive = () => {
-        if (this.state.firstName !== "") {
+        if (this.state.firstName !== "" && this.emailValidator() === true) {
             return {
                 color: 'indigo',
                 cursor: 'pointer',
@@ -31,23 +44,33 @@ export class HomePage extends Component {
 
 
     render() {
-        const { firstName } = this.state
+
+        const { firstName, email } = this.state
+
         return (
             <div className="welcome-wrapper">
                 <div style={{ width: '100%' }}>
-                    <div className="" style={{ margin: 'px 0', fontSize: '18px' }}> <p>Welcome <span role="img" aria-label="hugging face">🤗</span>,</p></div>
+                    <div className="" style={{ margin: '0px 0px 15px', fontSize: '18px' }}> <p>Welcome <span role="img" aria-label="hugging face">🤗</span></p></div>
 
-                    <p style={{ margin: '10px 0', fontSize: '18px' }}>This is Your Todo List App, Please Enter Your First Name And Upload image To Continue.</p>
+                    {/* <p style={{ margin: '10px 0', fontSize: '16px' }}> Please Enter Your First Name. Email And Upload image To Continue.</p> */}
 
-                    <label htmlFor="myfile" className="file-upload"><span style={{ paddingRight: '10px' }}>Select picture:</span>
+                    <label htmlFor="myfile" className="file-upload"><span style={{ paddingRight: '10px' }}>Select image:</span>
                         <input type="file" id="myfile" name="myfile" accept='image/*' onChange={this.props.addAvatar} style={{ width: '60%' }} />
                     </label>
 
-                    <input type="text" className="input-field" placeholder="Please Enter First Name..." style={{ margin: '15px 0' }}
+                    <input type="text" className="input-field" placeholder="Enter First Name..." style={{ margin: '15px 0' }}
                         name="firstName"
                         value={firstName}
                         onChange={this.onChange}
                     />
+
+                    <input type="email" className="input-field" style={{ margin: '0px 0px 15px' }}
+                        placeholder="Enter email..."
+                        name="email"
+                        value={email}
+                        onChange={this.onEmailChange}
+                    />
+
 
                     <div style={{ width: '100%', textAlign: 'right' }}><button className="btn_login" onClick={(e) => { this.onSubmit(e); this.props.history.push("/todos") }} style={this.makeLinkActive()} ><span><i className="fas fa-sign-in-alt"></i> Sign In </span></button></div>
 
