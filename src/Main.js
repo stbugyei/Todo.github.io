@@ -270,8 +270,8 @@ class Main extends Component {
 
         if (allTrue === true) {
             if (Notification.permission === 'granted') {
-                // navigator.serviceWorker.ready.then(function (registration) {
-                navigator.serviceWorker.getRegistration().then(function (registration) {
+                navigator.serviceWorker.ready.then(function (registration) {
+               // navigator.serviceWorker.getRegistration().then(function (registration) {
                     const options = { body: text, icon: img, vibrate: vibration };
                     registration.showNotification('TodoList', options);
                 });
